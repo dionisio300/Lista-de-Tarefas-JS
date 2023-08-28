@@ -16,4 +16,16 @@ function adicionarTarefa(tarefa) {
 function salvarTarefasNoLocalStorage() {
     localStorage.setItem('tarefas', JSON.stringify(tarefas));
 }
+
+
+// Adicionar evento de envio do formulário
+formularioTarefa.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const novaTarefa = inputTarefa.value.trim();
+    if (novaTarefa !== '') {
+      adicionarTarefa(novaTarefa);
+      inputTarefa.value = '';
+    }
+});
+
   
